@@ -1,1 +1,1 @@
-rake db:migrate RAILS_ENV=production
+do rake db:migrate RAILS_ENV=production
