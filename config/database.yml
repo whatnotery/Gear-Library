@@ -80,8 +80,8 @@ test:
 # for a full overview on how database connection configuration can be specified.
 #
 production:
-  <<: *default
+  #<<: *default
   url: DATABASE_URL
-  # database: gear_library_production
-  #username: gear_library
-  #password: <%= ENV["GEAR_LIBRARY_DATABASE_PASSWORD"] %>
+  database: PGDATABASE
+  username: PGUSER
+  password: PGPASSWORD
