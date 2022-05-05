@@ -1,0 +1,15 @@
+<%= form_with model: @user do |form| %>
+    <%= form.label :first_name %><br>
+    <%= form.text_field :first_name %><br>
+    <%= form.label :last_name %><br>
+    <%= form.text_field :last_name %><br>
+    <%= form.label :email %><br>
+    <%= form.text_field :email %><br>
+    <%= form.label :phone_number %><br>
+    <%= form.text_field :phone_number %> <br>
+    <%= form.label :bio %><br>
+    <%= form.text_area :bio %><br> 
+    <%= form.label :avatar%><br>
+    <%= form.file_field :avatar, accept: 'image/png, image/gif, image/jpeg' %> <br><br>
+    <%= form.submit %>
+<% end %>
