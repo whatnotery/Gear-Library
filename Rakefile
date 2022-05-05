@@ -3,6 +3,5 @@
 
 require_relative "config/application"
 
-Rails.application.load_tasks
 
-heroku run db:migrate
+Rails.application.load_tasks
