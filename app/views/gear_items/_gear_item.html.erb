@@ -3,7 +3,13 @@
     <strong>Name:</strong>
     <%= gear_item.name %>
   </p>
-
+  <p>
+    <% if gear_item.item_images.attached? %>
+                <% gear_item.item_images.each do |image| %>
+                        <%= image_tag(image) %>
+                <% end %>
+            <% end %>
+  </p>
   <p>
     <strong>Description:</strong>
     <%= gear_item.description %>
@@ -16,7 +22,7 @@
 
   <p>
     <strong>Owned by:</strong>
-    <%= gear_item.owner.full_name %>
+    <%=link_to gear_item.owner.full_name, user_path(gear_item.owner.id) %>
   </p>
 
 </div>

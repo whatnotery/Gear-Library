@@ -14,8 +14,89 @@
  *= require_self
  */
 
- img {
-     width: 10%;
-     height: auto;
-     border-radius: 50%;
- }
+ body {
+    background-color: #517664;
+}
+
+
+#mainNavbar .navbar-brand {
+    font-family: 'Teko', sans-serif;
+    font-weight: 700;
+    letter-spacing: .35rem;
+    text-transform: uppercase;
+    color: #9FD8CB;
+}
+
+#mainNavbar .nav-link,
+.dropdown-item {
+    font-family: 'Montserrat', sans-serif;
+    color: #2D3319;
+    font-weight: 700 ;
+}
+
+.dropdown-menu {
+    background-color: rgba(81,118,100,.85);
+}
+
+.nav-link:hover{
+    background-color: #9FD8CB;
+}
+
+.emphasis {
+    font-family: 'Teko', sans-serif;
+    font-weight: 700;
+    letter-spacing: .35rem;
+    text-transform: uppercase;
+    color: #9FD8CB;
+    font-size: 5rem;
+}
+
+.emphasis span {
+    color: #2D3319;
+
+}
+
+p#lorem {
+
+    color: #9FD8CB;
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+footer {
+    background-color: #2D3319;
+    color: #D6E5E3;
+}
+
+footer a {
+    color: #CACFD6;
+}
+
+.navbar.scrolled {
+    background: rgba(81,118,100,.85);
+    transition: background .5s;
+}
+
+@media (max-width: 1250px) {
+
+    .emphasis,
+    .emphasis span {
+        font-size: 3.6rem;
+
+    }
+
+}
+
+@media (max-width: 875px) {
+
+    .emphasis,
+    .emphasis span {
+        font-size: 3rem;
+
+    }
+
+    div.dropdown-menu {
+        background: none;
+    }
+
+}
