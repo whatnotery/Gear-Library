@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @gear_item %>
+
+<div>
+  <%= link_to "Edit this gear item", edit_gear_item_path(@gear_item) %> |
+  <%= link_to "Back to gear items", gear_items_path %>
+
+  <%= button_to "Destroy this gear item", @gear_item, method: :delete %>
+</div>

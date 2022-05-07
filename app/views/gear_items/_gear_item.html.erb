@@ -1,0 +1,22 @@
+<div id="<%= dom_id gear_item %>">
+  <p>
+    <strong>Name:</strong>
+    <%= gear_item.name %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= gear_item.description %>
+  </p>
+
+  <p>
+    <strong>Is checked out:</strong>
+    <%= gear_item.is_checked_out %>
+  </p>
+
+  <p>
+    <strong>Owned by:</strong>
+    <%= gear_item.owner.full_name %>
+  </p>
+
+</div>
