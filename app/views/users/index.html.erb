@@ -1,8 +1,7 @@
 <% if current_user.present? %>
- Signed In: <%= current_user.full_name %>
-<%= link_to "Sign out", users.sign_out_path%> 
-
-<% @users.each do |user| %>
+<!-- Signed In: <%= current_user.full_name %>
+<%= link_to "Sign out", users.sign_out_path%> !-->
+  <% @users.each do |user| %>
     <div>
     <% if user.avatar.present? %>
     <img src="<%= (url_for(user.avatar)) %>"><br>
@@ -10,9 +9,5 @@
     <%= link_to user.full_name, user %>
     </div>
   <% end %>
-
-  <% else %>
-<%= link_to "Sign in", users.sign_in_path %> 
-<%= link_to "Sign up", new_user_path%>
   
   <% end %>

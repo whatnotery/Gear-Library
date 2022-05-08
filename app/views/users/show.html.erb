@@ -3,7 +3,13 @@
 <% if @user.avatar.present? %>
     <img src="<%= (url_for(@user.avatar)) %>"><br>
 <% end %>
-<p><%= @user.email %>  //// <%= @user.phone %></p>
+<p><%=mail_to @user.email %>  
+<%if @user.phone.present?%>
+//// <%=link_to @user.phone, "tel:#{@user.phone}" %>  
+<% end %>
+<% if @user.social_media.present?%>
+//// <%=link_to 'Social Media', @user.social_media %></p>
+<% end %>
 <p><%= @user.bio %></p>
 
 <% @user.gear_items.each do |item| %>
@@ -14,6 +20,7 @@
   <% end %>
 
 <ul>
+<% if @user.id == current_user.id%>
   <li><%= link_to "Edit", edit_user_path(@user) %></li>
-  <li><%= link_to "Index", users_path %></li>
+  <% end %>
 </ul>
