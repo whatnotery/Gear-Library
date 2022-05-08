@@ -12,4 +12,17 @@
  *
  */
 
+ $white: #ffffff;
+
+ $theme-colors: (
+     "light":      #43726b,
+     "dark":       #042f1a,
+     "primary":    #144736,
+     "secondary":  #94743d,
+     "info":       #5a648c,
+     "success":    #1c9835,
+     "warning":    #eec220,
+     "danger":     #eb1041,
+ );
+
  @import "bootstrap";

@@ -5,5 +5,5 @@ class GearItem < ApplicationRecord
      foreign_key: 'user_id',
      inverse_of: :gear_items
   )
-  has_many_attached :item_images
+  has_one_attached :item_images
 end

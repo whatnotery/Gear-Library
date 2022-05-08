@@ -4,11 +4,9 @@
     <%= gear_item.name %>
   </p>
   <p>
-    <% if gear_item.item_images.attached? %>
-                <% gear_item.item_images.each do |image| %>
-                        <%= image_tag(image) %>
-                <% end %>
-            <% end %>
+   <% if gear_item.item_images.present? %>
+    <img src="<%= (url_for(gear_item.item_images)) %>" class="img-fluid rounded-circle"><br>
+<% end %>
   </p>
   <p>
     <strong>Description:</strong>
@@ -19,7 +17,7 @@
     <strong>Is checked out:</strong>
     <%= gear_item.is_checked_out %>
   </p>
-
+  
   <p>
     <strong>Owned by:</strong>
     <%=link_to gear_item.owner.full_name, user_path(gear_item.owner.id) %>

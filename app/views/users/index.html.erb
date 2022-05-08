@@ -1,13 +1,17 @@
 <% if current_user.present? %>
-<!-- Signed In: <%= current_user.full_name %>
-<%= link_to "Sign out", users.sign_out_path%> !-->
+  
   <% @users.each do |user| %>
-    <div>
+  
+  <div>
+    
     <% if user.avatar.present? %>
-    <img src="<%= (url_for(user.avatar)) %>"><br>
+      <img src="<%= (url_for(user.avatar)) %>" class="img-fluid rounded-circle"><br>
     <% end %>
-    <%= link_to user.full_name, user %>
-    </div>
-  <% end %>
+  
+  <%= link_to user.full_name, user %>
+  
+  </div>
   
   <% end %>
+  
+<% end %>

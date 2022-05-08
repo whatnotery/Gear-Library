@@ -25,9 +25,10 @@
     <%= form.label :is_checked_out, style: "display: block" %>
     <%= form.check_box :is_checked_out %>
   </div>
+
   <div>
-    <%= form.label :item_images%>
-    <%= form.file_field :item_images, accept: 'image/png, image/gif, image/jpeg', multiple: true %>
+    <%= form.label :item_images %>
+    <%= form.file_field :item_images, accept: 'image/png, image/gif, image/jpeg'  %>
   </div>
   <div>
     <%= form.submit %>

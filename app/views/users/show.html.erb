@@ -1,26 +1,26 @@
 
-<h2><%= @user.full_name %></h2>
+<p class = "display-4"><%= @user.full_name %></p>
+
+
+
 <% if @user.avatar.present? %>
-    <img src="<%= (url_for(@user.avatar)) %>"><br>
+    <img src="<%= (url_for(@user.avatar)) %>" class="img-fluid rounded-circle"><br>
 <% end %>
-<p><%=mail_to @user.email %>  
+<p><%=mail_to @user.email, :class => "text-primary" %>  
 <%if @user.phone.present?%>
-//// <%=link_to @user.phone, "tel:#{@user.phone}" %>  
+//// <%=link_to @user.phone, "tel:#{@user.phone}", :class => "text-primary" %>  
 <% end %>
 <% if @user.social_media.present?%>
-//// <%=link_to 'Social Media', @user.social_media %></p>
+//// <%=link_to 'Social Media', @user.social_media, :class => "text-primary" %> </p>
 <% end %>
+<% if @user.id == current_user.id || current_user.is_admin?%>
+  <%= link_to "Edit Profile", edit_user_path(@user), :class => "text-primary" %>
+  <% end %>
 <p><%= @user.bio %></p>
-
+<%= link_to "New gear item", new_gear_item_path %>
 <% @user.gear_items.each do |item| %>
     <div>
    <p> <%=link_to item.name, gear_item_path(:id => item.id) %></p>
  
     </div>
   <% end %>
-
-<ul>
-<% if @user.id == current_user.id%>
-  <li><%= link_to "Edit", edit_user_path(@user) %></li>
-  <% end %>
-</ul>

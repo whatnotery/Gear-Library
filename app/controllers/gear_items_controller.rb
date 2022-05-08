@@ -67,6 +67,6 @@ class GearItemsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def gear_item_params
-      params.require(:gear_item).permit(:name, :description, :is_checked_out, :user_id, :item_images)
+      params.require(:gear_item).permit(:name, :description, :is_checked_out, :user_id, :item_images, :borrower) 
     end
 end
