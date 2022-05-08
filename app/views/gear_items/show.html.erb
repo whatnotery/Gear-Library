@@ -3,7 +3,8 @@
 <%= render @gear_item %>
 <%= link_to "Back to gear items", gear_items_path %>
 <div>
-<% if @gear_item.owner.id == current_user.id%>
-  <%= button_to "Edit this gear item", edit_gear_item_path(@gear_item) %> <%= button_to "Destroy this gear item", @gear_item, method: :delete %>
+<% if @gear_item.owner.id == current_user.id || current_user.is_admin? %>
+  <%= link_to "Edit this gear item", edit_gear_item_path(@gear_item) %> 
+  
 <% end %>
 </div>
