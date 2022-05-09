@@ -1,7 +1,6 @@
-<div id="<%= dom_id gear_item %>">
+<div  id="<%= dom_id gear_item %>">
   <p>
-    <strong>Name:</strong>
-    <%= gear_item.name %>
+    <%= link_to gear_item.name , gear_item, :class => "display-6 link-secondary"  %>
   </p>
   <p>
    <% if gear_item.item_images.present? %>
@@ -24,3 +23,7 @@
   </p>
 
 </div>
+
+
+      
+   

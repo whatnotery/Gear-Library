@@ -2,13 +2,15 @@
 
 <h1>Gear items</h1>
 
-<div id="gear_items">
+<div id="gear_items row">
   <% @gear_items.each do |gear_item| %>
+  <div class="col-xs">
     <%= render gear_item %>
-    <p>
-      <%= link_to "Show this gear item", gear_item %>
-    </p>
+  </div>
   <% end %>
 </div>
 
 
+
+    
+  
