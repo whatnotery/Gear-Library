@@ -9,7 +9,7 @@
 <% end %>
 <p><%=mail_to @user.email, :class => "text-primary" %>  
 <%if @user.phone.present?%>
-//// <%=link_to @user.phone, "tel:#{@user.phone}", :class => "text-primary" %>  
+//// <%=link_to @user.phone, "sms:#{@user.phone}", :class => "text-primary" %>  
 <% end %>
 <% if @user.social_media.present?%>
 //// <%=link_to 'Social Media', @user.social_media, :class => "text-primary" %> </p>
