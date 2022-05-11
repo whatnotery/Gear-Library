@@ -1,11 +1,15 @@
-<div  id="<%= dom_id gear_item %>">
-  <p>
+<div  id="<%= dom_id gear_item %>" >
+  
+<div class="card bg-primary border border-secondary border-2">
+  <% if gear_item.item_images.present? %>
+    <%= image_tag(gear_item.item_images, :size => "260x180", :class => "card-img-top img-fluid") %>
+  <% end %>
+  <div class="card-body">
+    <p class="card-text"><p>
     <%= link_to gear_item.name , gear_item, :class => "display-6 link-secondary"  %>
   </p>
   <p>
-   <% if gear_item.item_images.present? %>
-    <img src="<%= (url_for(gear_item.item_images)) %>" class="img-fluid rounded-circle"><br>
-<% end %>
+   
   </p>
   <p>
     <strong>Description:</strong>
@@ -20,10 +24,7 @@
   <p>
     <strong>Owned by:</strong>
     <%=link_to gear_item.owner.full_name, user_path(gear_item.owner.id) %>
-  </p>
-
+  </p></p>
+  </div>
 </div>
-
-
-      
-   
+</div>

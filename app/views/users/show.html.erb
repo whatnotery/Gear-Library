@@ -5,6 +5,7 @@
 
 <% if @user.avatar.present? %>
     <img src="<%= (url_for(@user.avatar)) %>" class="img-fluid rounded-circle"><br>
+   <% # image_tag user.avatar.variant(:thumb), :class => "img-fluid rounded-circle" %>
 <% end %>
 <p><%=mail_to @user.email, :class => "text-primary" %>  
 <%if @user.phone.present?%>
