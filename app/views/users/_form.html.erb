@@ -12,6 +12,6 @@
     <%= form.label :bio %><br>
     <%= form.text_area :bio %><br> 
     <%= form.label :avatar%><br>
-    <%= form.file_field :avatar, accept: 'image/png, image/gif, image/jpeg' %> <br><br>
+    <%= form.file_field :avatar, accept: 'image/png, image/gif, image/jpeg', direct_upload: true %> <br><br>
     <%= form.submit %>
 <% end %>

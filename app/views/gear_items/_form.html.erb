@@ -28,7 +28,7 @@
 
   <div>
     <%= form.label :item_images %>
-    <%= form.file_field :item_images, accept: 'image/png, image/gif, image/jpeg'  %>
+    <%= form.file_field :item_images, accept: 'image/png, image/gif, image/jpeg', direct_upload: true %>
   </div>
   <div>
     <%= form.submit %>
