@@ -1,6 +1,6 @@
 production:
-  cloud_name: ENV[“cloud_name”]
-  api_key: ENV[“cloud_api_key”]
-  api_secret: ENV[“cloud_api_secret”]
+  cloud_name: <%= ENV[“CLOUD_NAME”] %>
+  api_key: <%= ENV[“CLOUD_API_KEY”] %>
+  api_secret: <%= ENV[“CLOUD_API_SECRET”] %>
   secure: true
   cdn_subdomain: true
