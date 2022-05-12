@@ -2,7 +2,7 @@
 
 <h1>Gear items</h1>
 
-<div id="gear_items row align-items-center">
+<div id="gear_items" class="row d-flex justify-content-around align-items-center">
   <% @gear_items.each do |gear_item| %>
   <div class="col-3 d-inline-flex text-center px-3 py-2 rounded">
     <%= render gear_item %>
