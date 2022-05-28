@@ -8,7 +8,8 @@ class User < ApplicationRecord
       :gear_items,
       class_name: 'GearItem',
       foreign_key: 'user_id',
-      inverse_of: :owner
+      inverse_of: :owner,
+      dependent: :destroy
     )
     def full_name
         [first_name, last_name].join(' ')

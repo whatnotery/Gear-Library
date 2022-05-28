@@ -12,19 +12,25 @@
     <strong>Description:</strong>
     <%= gear_item.description %>
   </p>
-
-
-  <p>
-    <strong>Owned by:</strong>
-    <%=link_to gear_item.owner.full_name, user_path(gear_item.owner.id) %>
-  </p>
   <p>
     <% if !gear_item.borrower?%>
     <strong>Item Available</strong>
+
+    <p><%=link_to  "Request to borrow by email", 
+    "mailto:#{gear_item.owner.email}?subject=Borrowing%20#{gear_item.name}%20from%20bikepacking%20gear%20library&body=Hi%20#{gear_item.owner.first_name},%0D%0A%0D%0AI%20was%20hoping%20I%20would%20be%20able%20to%20borrow%20your%20#{gear_item.name}%20from%20the%20<START%20DATE>%20to%20the%20<END%20DATE>",  
+    :class => "link-secondary" %>  
+<%if gear_item.owner.phone.present?%>
+<br><%=link_to "Request to borrow by text", "sms:#{gear_item.owner.phone}?&body=Hi%20#{gear_item.owner.first_name},%0D%0A%0D%0AThis%20is%20#{User.find_by(:id => current_user.id).full_name}%20from%20the%20Central%20Kentucy%20Bikepackers%20Gear%20Library,%20I%20  was%20hoping%20I%20would%20be%20able%20to%20borrow%20your%20#{gear_item.name}%20from%20the%20<START%20DATE>%20to%20the%20<END%20DATE>", :class => "link-secondary" %>  
+<% end %>
+<% if gear_item.owner.social_media.present?%>
+<br> <%=link_to 'Social Media', gear_item.owner.social_media, :class => "link-secondary" %> </p>
+<% end %>
+  </p>
     <% else %>
     <strong>Checked out by:</strong> <%=link_to User.find_by(:id => gear_item.borrower).full_name, user_path(gear_item.borrower)%>
     <% end%>
-  </p>
+
+
   
 
 </div>
