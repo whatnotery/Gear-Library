@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
 
   def current_user
     @current_user ||= authenticate_by_session(User)
-  end
+  end 
 
   def require_user!
     return if current_user

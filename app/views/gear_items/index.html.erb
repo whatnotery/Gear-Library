@@ -4,9 +4,11 @@
 
 <div id="gear_items" class="row d-flex justify-content-around align-items-center">
   <% @gear_items.each do |gear_item| %>
-  <div class="col-md-3 col-sm-2 col-xs-1 d-flex text-center px-3 py-2 rounded">
-    <%= render gear_item %>
-  </div>
+    <% if gear_item.borrower.blank? %> 
+      <div class="col-md-3 col-sm-2 col-xs-1 d-flex text-center px-3 py-2 rounded">
+        <%= render gear_item %>
+      </div>
+    <% end %>
   <% end %>
 </div>  
 
